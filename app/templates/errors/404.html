@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #dc3545; /* Red background color */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #fff; /* White link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>404 Not Found</h1>
+    <p>Sorry, the page you're looking for might be lost in the void.</p>
+    <p>Please try again or <a href="{{url_for('main.index')}}">go back to the home page</a>.</p>
+</body>
+</html>

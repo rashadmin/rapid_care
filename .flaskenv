@@ -1,0 +1,6 @@
+FLASK_APP=rapid_care_hub.py
+FLASK_DEBUG=1
+FLASKMAIL_SERVER=smtp-relay.brevo.com
+MAIL_PORT=587
+MAIL_USERNAME=abdul.a.rasheed2022@gmail.com
+MAIL_PASSWORD=EBIH2tpVQxTMUSN1

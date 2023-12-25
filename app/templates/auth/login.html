@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%block content%}
+<section>
+    <button>LOGIN</button>
+</section>
+
+
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    <p>
+        {{form.username.label}} <br/>
+        {{form.username}}
+        {% for error in form.username.errors%}
+            </br>
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form.password.label}} <br/>
+        {{form.password}}
+        {% for error in form.password.errors%}
+            </br>
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form.remember_me.label}} <br/>
+        {{form.remember_me}}
+    </p>
+    <p>
+        {{form.submit}}
+    </p>
+
+    </form>
+
+
+</form>
+{%endblock%}

@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Cream background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50; /* Green header */
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+nav {
+    background-color: #4CAF50; /* Green navigation bar */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* White link color */
+    margin: 0 10px;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section button {
+    background-color: #ff0000; /* Red button color */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+section button:hover {
+    background-color: #d90000; /* Darker red on hover */
+}
+.fixed-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    width: 60%; /* Adjust the width as needed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fixed-bottom-send {
+    position: fixed;
+    bottom: 20px;
+    left: 84%;
+    transform: translateX(-50%);
+    background-color: #111961;
+    color: #fff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 6%; /* Adjust the width as needed */
+    display: flex;
+    align-items: center;
+}
+
+.send-icon::before {
+    content: '\25B6'; /* Unicode for right-pointing triangle */
+    font-size: 20px; /* Adjust the font size as needed */
+    cursor: pointer;
+    
+}
+.display{
+    display: none;
+}
+
+

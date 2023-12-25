@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%block content%}
+<section>
+    <p>Hi, {{current_user.username}}Welcome to our website!</p>
+    <p>Edit your Information.</p>
+</section>
+
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    <p>
+        {{form.bloodgroup.label}} <br/>
+        {{form.bloodgroup}}
+        {% for error in form.bloodgroup.errors%}
+            </br>
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form.genotype.label}} <br/>
+        {{form.genotype}}
+        {% for error in form.genotype.errors%}
+            </br>
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form.medical_history.label}} <br/>
+        {{form.medical_history}}
+        {% for error in form.medical_history.errors%}
+            </br>
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form.submit}}
+    </p>
+
+    </form>
+
+
+</form>
+{%endblock%}

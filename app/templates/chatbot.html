@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{%block content%}
+<section>
+    <button>CHATBOT</button>
+</section>
+
+
+
+
+<form action="" method="post" id="form-submit1" name="form-submit1" novalidate>
+    {{chat_form.hidden_tag()}}
+
+    <p>
+        {{chat_form.send}}
+    </p>
+
+    </form>
+
+
+
+<form action="" method="post" id="form-submit" name="form-submit" novalidate>
+    {{form1.hidden_tag()}}
+        {{form1.message(class='fixed-bottom')}}
+        {% for error in form1.message.errors%}
+            {{error}}
+        {%endfor%}
+    </p>
+    <p>
+        {{form1.submit}}
+    </p>
+
+    </form>
+
+{{conversation.message}}
+
+{%endblock%}
