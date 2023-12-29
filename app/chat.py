@@ -1,6 +1,7 @@
 from openai import OpenAI
 import json
-client = OpenAI(api_key = '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')
+from config import Config
+client = OpenAI(api_key = Config['OPEN_AI_API_KEY'])
 class chat():
     def __init__(self,message):
         self.message = json.loads(message)
@@ -41,6 +42,45 @@ class chat():
     )
         full_response = full_response.choices[0].message.content
         self.message.append({"role": "assistant", "content": full_response})
+
+
+    def get_dict_response(self,is_dict_done,text):
+        if not is_dict_done:
+            response = client.chat.completions.create(
+            model=self.openai_model,
+            messages=[
+                {
+                "role": "user",
+                "content": f"""
+                            You will be given a medical situation message : {text}. 
+                            return JSON format with the following key value pairs in back ticks
+                            
+                            
+                            `Situation`- `Emergency or Non-Emergency`
+                            `Age`-`Based on the age in the given information classify them as pediatric,adult,geriatric, if no age can be infered \
+                                    return Not Stated`
+                            `Gender` -  `From the medical situation message, kindly infer the gender if no gender can be infered \
+                                    return Not Stated``
+                            `Surgical Status` - `Preoperative or Post operative or any name for the Surgical Status if no status can be infered \
+                                    return Not Stated`` 
+                            
+                            `Trauma Name`- `Using the message,Classify into one of the trauma categories.e.g Penetrating Trauma
+                            `Trauma Description` - `A very short description of the situation in less than 100 characters`
+                            `Physicians` - `= `Return a LIST of specially trained surgeons who are responsible for assessing, \
+                                                managing, and performing surgery when necessary on patients who have sustained the stated traumatic injuries.
+                            `Symptoms`- `Using the message , kindly state out atleast 5 possible observable symptoms that are likely to be a result of the medical situation in a python list`
+                            `FirstAid_searchwords` - `Using the message, kindly get at least 7 and at most 10 emergency keywords always return cpr or keywords relating to cpr`
+                            - If the given message does not contain a medical related situation simply return `non medical related condition`
+                            
+                                
+                                """
+                }
+            ],
+            temperature=1
+            )
+            responses = response.choices[0].message.content
+            return responses
+        return None
 
         
        

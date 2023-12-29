@@ -3,11 +3,11 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash 
 from flask_login import UserMixin
 import enum
+from app.search import add_to_index,remove_index,query_index
 from flask import url_for
+from app.videos_functions import generate_other_names
 import json
 from app.chat import chat
-
-
 class BloodGroup(enum.Enum):
     a_positive = 'A+'
     b_positive = 'B+'
@@ -43,6 +43,43 @@ class PaginatedAPIMixin(object):
             }
         }
         return data
+class SeachableMixin(object):
+    @classmethod
+    def search(cls,expression,page,per_page):
+        ids,total = query_index(cls.__tablename__,expression,page,per_page)
+        if total == 0:
+            return [],0
+        when = []
+        for i in range(len(ids)):
+            when.append((ids[i],i))
+        return cls.query.filter(cls.id.in_(ids)).order_by(db.case(*when,value=cls.id)),total
+    
+    @classmethod
+    def before_commit(cls,session):
+        session._changes = {
+                            'add':list(session.new),
+                            'update':list(session.dirty),
+                            'delete':list(session.deleted)
+        }
+    @classmethod
+    def after_commit(cls,session):
+        for obj in session._changes['add']:
+            if isinstance(obj,SeachableMixin):
+                add_to_index(obj.__tablename__,obj)
+        for obj in session._changes['update']:
+            if isinstance(obj,SeachableMixin):
+                add_to_index(obj.__tablename__,obj)
+        for obj in session._changes['delete']:
+            if isinstance(obj,SeachableMixin):
+                remove_index(obj.__tablename__,obj)
+        session._changes = None
+
+    @classmethod
+    def reindex(cls):
+        for obj in cls.query:
+            add_to_index(cls.__tablename__,obj)
+db.event.listen(db.session,'before_commit',SeachableMixin.before_commit)
+db.event.listen(db.session,'after_commit',SeachableMixin.after_commit)
 class User(UserMixin,db.Model):
     id = db.Column(db.Integer,primary_key=True)
     firstname = db.Column(db.String(25),nullable = False)
@@ -98,16 +135,20 @@ class User(UserMixin,db.Model):
 
 
 
-class Conversation(PaginatedAPIMixin,db.Model):
+class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
+    __searchable__ = ['title','message']
     id = db.Column(db.Integer,primary_key=True)
     conversation_no =  db.Column(db.Integer,nullable = False)
     created_at = db.Column(db.Date,default=datetime.utcnow)
     modified_at = db.Column(db.Date,default=datetime.utcnow)
     title = db.Column(db.String(120),nullable = False)
     message = db.Column(db.Text,nullable = False)
+    is_dict_done = db.Column(db.Boolean,nullable=True)
+    search_keywords = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+
     def __repr__(self):
-        return f'<User : {self.conversation_no}, Title : {self.title}, Created : {self.created_at}>'
+        return f'<User : {self.user_id} Conversation_Number : {self.conversation_no}, Title : {self.title}, Created : {self.created_at}>'
     def to_dict(self):
         data = {
             'id' : self.id,
@@ -116,6 +157,7 @@ class Conversation(PaginatedAPIMixin,db.Model):
             'modified_at':self.modified_at.isoformat() + 'Z',
             'title':self.title,
             'message':json.loads(self.message),
+            '_links':self.search_keywords
         }
         return data
     def from_dict(self,user_id,conversation_no=None,new_chat=False,data=None):
@@ -129,6 +171,7 @@ class Conversation(PaginatedAPIMixin,db.Model):
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
             self.user_id = user_id
+            self.is_dict_done = False
         if not new_chat:
             message = chat(self.message)
             message.add_user_message(data['user_message'])
@@ -137,9 +180,40 @@ class Conversation(PaginatedAPIMixin,db.Model):
             #Bot message adeed
             message = chat(self.message)
             message.get_response()
+            response = message.get_dict_response(is_dict_done=self.is_dict_done,text = data['user_message'])
+            if response:
+                search_keywords = json.loads(response)['FirstAid_searchwords']
+                if search_keywords:
+                    search = [Videos.search(keyword,1,2) for keyword in search_keywords]
+                    return_link = {search[i][0].all()[0].name:search[i][0].all()[0].url for i in range(len(search)) if search[i][1]['value']!=0}
+                    self.search_keywords = repr(return_link)
+                    self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
 
+class Videos(SeachableMixin,db.Model):
+    __searchable__ = ['name','other_names']
+    id = db.Column(db.Integer,primary_key=True)
+    url =  db.Column(db.String(100),nullable = False,unique=True)
+    name = db.Column(db.Text,nullable=False)
+    other_names = db.Column(db.Text,nullable=False)
+
+
+    def __repr__(self):
+        return f'<Videos : {self.name}, Link : {self.url}>'
+
+    def from_dict(self,data):
+        self.other_names = repr(generate_other_names(data['name']))
+        self.name = data['name']
+        self.url = data['url']
+
+    def to_dict(self):
+        data = {
+            'url':self.url,
+            'name':self.name,
+            'other_names':eval(self.other_names)
+        }
+        return data
 @login.user_loader
 def load_user(id):
     return db.session.get(User,int(id))

@@ -43,6 +43,13 @@ def update_user(id):
     db.session.commit()
     return jsonify(user.to_dict())
 
+'''
+a,t = Conversation.search('How',1,10)
+for i in range(t['value']):
+     print(a.all()[i].title)
+'''
+
+
 @bp.route('/users/<int:id>/chats',methods=['POST'])
 def add_chat(id):
     conversation = Conversation()

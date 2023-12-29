@@ -5,11 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 import logging
 import os
+from elasticsearch import Elasticsearch
 from logging.handlers import SMTPHandler,RotatingFileHandler
-
-db = SQLAlchemy()
+from app.extensions import db
 migrate = Migrate()
 login = LoginManager()
+
 login.login_view = 'auth.login'
 
 def create_app(config_class=Config):
@@ -26,7 +27,7 @@ def create_app(config_class=Config):
     app.register_blueprint(main_bp)
     from app.api import bp as api_bp
     app.register_blueprint(api_bp,url_prefix='/api')
-
+    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None
     if not app.debug:
         if app.config['MAIL_SERVER']:
             auth = None
