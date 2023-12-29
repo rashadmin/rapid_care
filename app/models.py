@@ -5,9 +5,9 @@ from flask_login import UserMixin
 import enum
 from app.search import add_to_index,remove_index,query_index
 from flask import url_for
-from app.videos_functions import generate_other_names
+from app.videos.videos_functions import generate_other_names
 import json
-from app.chat import chat
+from app.chat.chat import chat
 class BloodGroup(enum.Enum):
     a_positive = 'A+'
     b_positive = 'B+'

@@ -1,7 +1,9 @@
 from openai import OpenAI
-from config import Config
-client = OpenAI(api_key = Config['OPEN_AI_API_KEY'])
+from flask import current_app
+
+
 def generate_other_names(name):
+    client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
     response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[

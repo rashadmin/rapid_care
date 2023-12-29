@@ -1,9 +1,12 @@
 from openai import OpenAI
 import json
-from config import Config
-client = OpenAI(api_key = Config['OPEN_AI_API_KEY'])
+from flask import current_app
+
+
+
 class chat():
     def __init__(self,message):
+
         self.message = json.loads(message)
         self.openai_model = "gpt-3.5-turbo"
         self.bot = '''
@@ -35,6 +38,7 @@ class chat():
     def return_all_message(self):
         return json.dumps(self.message, indent=2)
     def get_response(self):
+        client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
         full_response = client.chat.completions.create(
         model=self.openai_model,
         messages=self.message,
@@ -46,6 +50,7 @@ class chat():
 
     def get_dict_response(self,is_dict_done,text):
         if not is_dict_done:
+            client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
             response = client.chat.completions.create(
             model=self.openai_model,
             messages=[

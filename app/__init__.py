@@ -1,4 +1,6 @@
 from flask import Flask
+from app.chat import chat
+from app.videos import videos_functions
 from config import Config 
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -9,6 +11,7 @@ import os
 from elasticsearch import Elasticsearch
 from logging.handlers import SMTPHandler,RotatingFileHandler
 from app.extensions import db
+
 migrate = Migrate()
 login = LoginManager()
 
@@ -20,17 +23,30 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app,db)
     login.init_app(app)
-    from app.errors import bp as errors_bp
-    app.register_blueprint(errors_bp)
-    from app.auth import bp as auth_bp
-    app.register_blueprint(auth_bp,url_prefix='/auth')
-    from app.main import bp as main_bp
-    app.register_blueprint(main_bp)
-    from app.api import bp as api_bp
-    app.register_blueprint(api_bp,url_prefix='/api')
-    from app.cli import bp as cli_bp
-    app.register_blueprint(cli_bp)
+    with app.app_context():
+        from app.errors import bp as errors_bp
+        app.register_blueprint(errors_bp)
+        from app.auth import bp as auth_bp
+        app.register_blueprint(auth_bp,url_prefix='/auth')
+        from app.main import bp as main_bp
+        app.register_blueprint(main_bp)
+        from app.api import bp as api_bp
+        app.register_blueprint(api_bp,url_prefix='/api')
+        from app.cli import bp as cli_bp
+        app.register_blueprint(cli_bp)
+        from app.chat import bp as chat_bp
+        app.register_blueprint(chat_bp)
+        from app.videos import bp as videos_bp
+        app.register_blueprint(videos_bp)
     app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None
+    #engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+    #inspector = sa.inspect(engine)
+    #if not inspector.has_table("users"):
+    #with app.app_context():
+       # db.drop_all()
+        #db.create_all()
+        #app.logger.info('Initialized the database!')'''
+
     if not app.debug:
         if app.config['MAIL_SERVER']:
             auth = None
@@ -48,11 +64,11 @@ def create_app(config_class=Config):
                 secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
-    if app.config['LOG_WITH_GUNICORN']:
-        gunicorn_error_logger = logging.getLogger('gunicorn.error')
-        app.logger.handlers.extend(gunicorn_error_logger.handlers)
-        app.logger.setLevel(logging.DEBUG)
-    else:
+    #if app.config['LOG_WITH_GUNICORN']:
+       # gunicorn_error_logger = logging.getLogger('gunicorn.error')
+      #  app.logger.handlers.extend(gunicorn_error_logger.handlers)
+     #   app.logger.setLevel(logging.DEBUG)
+    #else:
         if not os.path.exists('logs'):
             os.mkdir('logs')
         file_handler = RotatingFileHandler('logs/app.log',maxBytes=10240,backupCount=10)
@@ -64,21 +80,10 @@ def create_app(config_class=Config):
         app.logger.info('hub_startup')
 
 
-    engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
-    inspector = sa.inspect(engine)
-    if not inspector.has_table("users"):
-        with app.app_context():
-            db.drop_all()
-            db.create_all()
-            app.logger.info('Initialized the database!')
-    else:
-        app.logger.info('Database already contains the users table.')
-
-    return app
-
 
 
     return app
+
 from app import models
 
 
