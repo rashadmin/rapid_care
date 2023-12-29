@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: echo
+Version: 0.8.0
+Summary: Callback Properties in Python
+Home-page: https://github.com/glue-viz/echo
+Author: Chris Beaumont and Thomas Robitaille
+Author-email: thomas.robitaille@gmail.com
+Maintainer: Chris Beaumont and Thomas Robitaille
+Maintainer-email: thomas.robitaille@gmail.com
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: qtpy
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-automodapi ; extra == 'docs'
+Requires-Dist: numpydoc ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Provides-Extra: qt
+Requires-Dist: PyQt5 (>=5.9) ; extra == 'qt'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+|Azure Status| |Coverage status|
+
+echo: Callback Properties in Python
+===================================
+
+Echo is a small library for attaching callback functions to property
+state changes. For example:
+
+::
+
+    class Switch(object):
+        state = CallbackProperty('off')
+
+    def report_change(state):
+        print 'the switch is %s' % state
+
+    s = Switch()
+    add_callback(s, 'state', report_change)
+
+    s.state = 'on'  # prints 'the switch is on'
+
+CalllbackProperties can also be built using decorators
+
+::
+
+    class Switch(object):
+
+          @callback_property
+          def state(self):
+            return self._state
+
+          @state.setter
+          def state(self, value):
+              if value not in ['on', 'off']:
+                  raise ValueError("invalid setting")
+              self._state = value
+
+Full documentation is avilable `here <http://echo.readthedocs.org/>`__
+
+.. |Azure Status| image:: https://dev.azure.com/glue-viz/echo/_apis/build/status/glue-viz.echo?branchName=master
+   :target: https://dev.azure.com/glue-viz/echo/_build/latest?definitionId=4&branchName=master
+.. |Coverage Status| image:: https://codecov.io/gh/glue-viz/echo/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/glue-viz/echo
+

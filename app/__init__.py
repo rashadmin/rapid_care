@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 import logging
+import sqlalchemy as sa
 import os
 from elasticsearch import Elasticsearch
 from logging.handlers import SMTPHandler,RotatingFileHandler
@@ -27,6 +28,8 @@ def create_app(config_class=Config):
     app.register_blueprint(main_bp)
     from app.api import bp as api_bp
     app.register_blueprint(api_bp,url_prefix='/api')
+    from app.cli import bp as cli_bp
+    app.register_blueprint(cli_bp)
     app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None
     if not app.debug:
         if app.config['MAIL_SERVER']:
@@ -45,6 +48,11 @@ def create_app(config_class=Config):
                 secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
+    if app.config['LOG_WITH_GUNICORN']:
+        gunicorn_error_logger = logging.getLogger('gunicorn.error')
+        app.logger.handlers.extend(gunicorn_error_logger.handlers)
+        app.logger.setLevel(logging.DEBUG)
+    else:
         if not os.path.exists('logs'):
             os.mkdir('logs')
         file_handler = RotatingFileHandler('logs/app.log',maxBytes=10240,backupCount=10)
@@ -56,6 +64,17 @@ def create_app(config_class=Config):
         app.logger.info('hub_startup')
 
 
+    engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+    inspector = sa.inspect(engine)
+    if not inspector.has_table("users"):
+        with app.app_context():
+            db.drop_all()
+            db.create_all()
+            app.logger.info('Initialized the database!')
+    else:
+        app.logger.info('Database already contains the users table.')
+
+    return app
 
 
 
