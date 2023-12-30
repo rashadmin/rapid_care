@@ -87,7 +87,7 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(25),unique=True,nullable = False)
     email =  db.Column(db.String(120),unique=True,nullable = False)
     date_joined = db.Column(db.Date,default=datetime.utcnow)
-    password_hash = db.Column(db.String,nullable = False)
+    password_hash = db.Column(db.String(200),nullable = False)
     bloodgroup = db.Column(db.Enum(BloodGroup))
     genotype = db.Column(db.Enum(Genotype))
     medical_history = db.Column(db.Text)

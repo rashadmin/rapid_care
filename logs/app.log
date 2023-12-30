@@ -49,3 +49,5 @@ AttributeError: 'NoneType' object has no attribute 'value'
 2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
 2023-12-30 19:00:58,447 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
 2023-12-30 19:01:10,964 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2023-12-30 19:36:21,112 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2023-12-30 19:36:35,420 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
