@@ -118,8 +118,8 @@ class User(UserMixin,db.Model):
             'last_name': self.lastname,
             'username':self.username,
             'email':self.email,
-            'bloodgroup':self.bloodgroup.value,
-            'genotype':self.genotype.value,
+            'bloodgroup':self.bloodgroup.value if self.bloodgroup else None,
+            'genotype':self.genotype.value if self.genotype else None,
             'medical_history':self.medical_history,
             '_links':{
                 'self': url_for('api.get_user',id=self.id),

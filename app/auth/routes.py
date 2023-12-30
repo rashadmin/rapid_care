@@ -38,7 +38,7 @@ def login():
         if not next_page or urlsplit(next_page).netloc != '':
             next_page = url_for('main.index')
         if current_user.bloodgroup is None or current_user.genotype is None:
-            return redirect(url_for('EditProfile'))
+            return redirect(url_for('main.EditProfile'))
         return redirect(next_page)
     return render_template('auth/login.html',title='login',form=form)
     

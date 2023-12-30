@@ -1,6 +1,6 @@
 from openai import OpenAI
 import json
-client = OpenAI(api_key = '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')
+from flask import current_app
 class chat():
     def __init__(self,message):
         self.message = json.loads(message)
@@ -34,6 +34,7 @@ class chat():
     def return_all_message(self):
         return json.dumps(self.message, indent=2)
     def get_response(self):
+        client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
         full_response = client.chat.completions.create(
         model=self.openai_model,
         messages=self.message,
@@ -44,6 +45,7 @@ class chat():
 
 
     def get_dict_response(self,is_dict_done,text):
+        client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
         if not is_dict_done:
             response = client.chat.completions.create(
             model=self.openai_model,
