@@ -38,7 +38,7 @@ def create_app(config_class=Config):
         app.register_blueprint(chat_bp)
         from app.videos import bp as videos_bp
         app.register_blueprint(videos_bp)
-    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) if app.config['ELASTICSEARCH_URL'] else None
+    app.elasticsearch = Elasticsearch(app.config['ELASTICSEARCH_URL']) if app.config['ELASTICSEARCH_URL'] else None
     engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
     inspector = sa.inspect(engine)
     if not inspector.has_table("user"):

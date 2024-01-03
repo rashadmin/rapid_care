@@ -156,7 +156,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             'created_at': self.created_at.isoformat() + 'Z',
             'modified_at':self.modified_at.isoformat() + 'Z',
             'title':self.title,
-            'message':json.loads(self.message),
+            'message':json.loads(self.message)[2:],
             '_links':self.search_keywords
         }
         return data
@@ -184,10 +184,10 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             if response:
                 search_keywords = json.loads(response)['FirstAid_searchwords']
                 if search_keywords:
-                    search = [Videos.search(keyword,1,2) for keyword in search_keywords]
+                    search = [Videos.search(keyword,1,10) for keyword in search_keywords]
                     return_link = {search[i][0].all()[0].name:search[i][0].all()[0].url for i in range(len(search)) if search[i][1]['value']!=0}
                     self.search_keywords = repr(return_link)
-                    self.is_dict_done = True
+                    #self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
 

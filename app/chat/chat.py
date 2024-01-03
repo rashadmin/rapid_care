@@ -36,6 +36,7 @@ class chat():
         self.message.append({"role": "user", "content": prompt})
 
     def return_all_message(self):
+        #self.message = self.message[2:]
         return json.dumps(self.message, indent=2)
     def get_response(self):
         client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])

@@ -1,4 +1,9 @@
-2023-12-30 08:20:44,460 ERROR: Exception on /api/users/1 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-03 06:14:53,122 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-03 09:58:41,858 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-03 10:12:39,089 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-03 10:17:06,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-03 10:19:32,265 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-03 10:20:06,060 ERROR: Exception on /api/users/3/chats/3 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,42 +17,42 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 9, in get_user
-    data = User.query.get_or_404(id).to_dict()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 121, in to_dict
-    'bloodgroup':self.bloodgroup.value if self.bloodgroup else None,
-                 ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'value'
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:22:14,353 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,792 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,024 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:00:58,447 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:01:10,964 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:36:21,112 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:36:35,420 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+  File "/home/py_sama/rapid_care/app/api/users.py", line 22, in get_chat
+    data = Conversation.query.filter_by(user_id=id,conversation_no=chat_id).first_or_404().to_dict()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
+    'message':json.loads(self.message[2:]),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 4 column 4 (char 2553)
+2024-01-03 10:21:26,878 ERROR: Exception on /api/users/3/chats/3 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 22, in get_chat
+    data = Conversation.query.filter_by(user_id=id,conversation_no=chat_id).first_or_404().to_dict()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
+    'message':json.loads(self.message[2:]),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 4 column 4 (char 2553)
+2024-01-03 10:22:06,572 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]

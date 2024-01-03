@@ -6,7 +6,7 @@ from flask_login import current_user,login_user,logout_user,login_required
 from app.models import User,Conversation
 from urllib.parse import urlsplit
 from datetime import datetime
-from app.main.chat import chat
+from app.chat import chat
 from config import Config
 @bp.route('/')
 @bp.route('/index')
