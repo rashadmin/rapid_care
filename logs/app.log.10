@@ -1,47 +1,4 @@
-2023-12-23 05:44:36,701 ERROR: Exception on /auth/logout [GET] [in /home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/auth/routes.py", line 49, in logout
-    return redirect(url_for('main.index'))
-                    ^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/helpers.py", line 222, in url_for
-    return current_app.url_for(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 1071, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/flask/app.py", line 1060, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/flask_environment/lib/python3.11/site-packages/werkzeug/routing/map.py", line 919, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
-2023-12-23 05:44:46,012 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 53]
-2023-12-27 06:42:54,596 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 55]
-2023-12-29 20:29:46,393 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-29 20:29:46,393 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-29 20:29:46,420 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-29 20:29:46,420 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:52:03,353 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:52:04,932 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:52:06,297 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:56:37,756 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:57:20,249 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:57:20,249 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:57:20,249 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:57:20,249 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 07:58:49,102 ERROR: Exception on /auth/login [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-02 07:22:13,026 ERROR: Exception on /api/users/1/chats [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,42 +12,11 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/auth/routes.py", line 41, in login
-    return redirect(url_for('EditProfile'))
-                    ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/helpers.py", line 222, in url_for
-    return current_app.url_for(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1071, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1060, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/werkzeug/routing/map.py", line 919, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'EditProfile'. Did you mean 'main.EditProfile' instead?
-2023-12-30 07:59:26,156 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:01:10,126 ERROR: Exception on /chatbot/1 [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/main/routes.py", line 84, in chatbot
+  File "/home/py_sama/rapid_care/app/api/users.py", line 57, in add_chat
+    conversation.from_dict(id,conversation_no=conversation_no,new_chat=True)
+  File "/home/py_sama/rapid_care/app/models.py", line 167, in from_dict
     message.get_response()
-  File "/home/py_sama/rapid_care/app/main/chat.py", line 37, in get_response
+  File "/home/py_sama/rapid_care/app/chat/chat.py", line 42, in get_response
     full_response = client.chat.completions.create(
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_utils/_utils.py", line 272, in wrapper
@@ -107,5 +33,56 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 930, in _request
     raise self._make_status_error_from_response(err.response) from None
-openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-CkuqC***************************************n2mn. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
-2023-12-30 08:01:57,901 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-9NRVz***************************************XC9u. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-01-02 07:22:35,765 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:22:35,765 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:22:35,769 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:22:35,773 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:22:46,425 ERROR: Exception on /api/users/1/chats [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 57, in add_chat
+    conversation.from_dict(id,conversation_no=conversation_no,new_chat=True)
+  File "/home/py_sama/rapid_care/app/models.py", line 167, in from_dict
+    message.get_response()
+  File "/home/py_sama/rapid_care/app/chat/chat.py", line 42, in get_response
+    full_response = client.chat.completions.create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_utils/_utils.py", line 272, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 645, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 916, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 958, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 916, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 958, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}

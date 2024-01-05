@@ -1,4 +1,4 @@
-2023-12-30 08:20:44,460 ERROR: Exception on /api/users/1 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-04 11:07:48,264 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,56 +12,19 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 9, in get_user
-    data = User.query.get_or_404(id).to_dict()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 121, in to_dict
-    'bloodgroup':self.bloodgroup.value if self.bloodgroup else None,
-                 ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'value'
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:21:33,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 08:22:14,353 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,792 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 12:14:01,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,023 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 14:53:47,024 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:27:50,663 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,556 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,557 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 18:33:17,558 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:00:58,447 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:01:10,964 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:36:21,112 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-30 19:36:35,420 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-31 10:10:36,398 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-31 22:03:27,475 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-31 22:03:27,485 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-31 22:03:27,486 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2023-12-31 22:03:27,496 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:10:42,255 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:10:42,255 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:10:42,255 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:10:42,255 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:17:42,652 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-02 07:18:41,998 ERROR: Exception on /api/users/1/chats [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 189, in from_dict
+    return_link = {search.keys()[0]:search.values()[0]for search in searches}
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 189, in <dictcomp>
+    return_link = {search.keys()[0]:search.values()[0]for search in searches}
+                   ~~~~~~~~~~~~~^^^
+TypeError: 'dict_keys' object is not subscriptable
+2024-01-04 13:47:07,302 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 15:02:54,260 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 15:59:46,011 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:01:20,687 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -75,25 +38,91 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 57, in add_chat
-    conversation.from_dict(id,conversation_no=conversation_no,new_chat=True)
-  File "/home/py_sama/rapid_care/app/models.py", line 167, in from_dict
-    message.get_response()
-  File "/home/py_sama/rapid_care/app/chat/chat.py", line 42, in get_response
-    full_response = client.chat.completions.create(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_utils/_utils.py", line 272, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 645, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 1088, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 853, in request
-    return self._request(
-           ^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 930, in _request
-    raise self._make_status_error_from_response(err.response) from None
-openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-9NRVz***************************************XC9u. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    return_link = [return_link(keyword) for keyword in search_keywords]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    return_link = [return_link(keyword) for keyword in search_keywords]
+                   ^^^^^^^^^^^
+NameError: cannot access free variable 'return_link' where it is not associated with a value in enclosing scope
+2024-01-04 16:02:21,864 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:02:41,797 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    return_link = [return_link(keyword) for keyword in search_keywords]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    return_link = [return_link(keyword) for keyword in search_keywords]
+                   ^^^^^^^^^^^
+NameError: cannot access free variable 'return_link' where it is not associated with a value in enclosing scope
+2024-01-04 16:03:21,458 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:03:37,545 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 49, in return_link
+    if search_result['value'] != 0:
+       ~~~~~~~~~~~~~^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+2024-01-04 16:04:33,604 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:04:52,702 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 51, in return_link
+    elif search_result['value'] == 0:
+         ~~~~~~~~~~~~~^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+2024-01-04 16:05:29,757 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]

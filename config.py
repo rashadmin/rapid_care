@@ -21,4 +21,5 @@ class Config(object):
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     OPEN_AI_API_KEY = os.environ.get('OPEN_AI_API_KEY')
     LOG_WITH_GUNICORN = os.getenv('LOG_WITH_GUNICORN', default=False)
+    YOUTUBE_API_KEY = os.getenv('KEY')
     

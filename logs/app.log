@@ -1,9 +1,4 @@
-2024-01-03 06:14:53,122 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-03 09:58:41,858 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-03 10:12:39,089 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-03 10:17:06,793 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-03 10:19:32,265 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-03 10:20:06,060 ERROR: Exception on /api/users/3/chats/3 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-04 17:39:55,359 ERROR: Exception on /api/users/3/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,19 +12,41 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 22, in get_chat
-    data = Conversation.query.filter_by(user_id=id,conversation_no=chat_id).first_or_404().to_dict()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
-    'message':json.loads(self.message[2:]),
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/anaconda3/lib/python3.11/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 340, in decode
-    raise JSONDecodeError("Extra data", s, end)
-json.decoder.JSONDecodeError: Extra data: line 4 column 4 (char 2553)
-2024-01-03 10:21:26,878 ERROR: Exception on /api/users/3/chats/3 [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 183, in from_dict
+    message.get_response()
+  File "/home/py_sama/rapid_care/app/chat/chat.py", line 43, in get_response
+    full_response = client.chat.completions.create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_utils/_utils.py", line 272, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 645, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 4097 tokens. However, your messages resulted in 4113 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2024-01-04 17:46:47,112 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 17:49:01,028 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 06:34:30,221 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 06:41:50,665 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 06:43:23,038 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 06:46:25,569 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 06:47:35,812 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:00:50,208 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:02:54,139 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:05:45,260 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:26:08,472 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:27:49,170 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:28:13,104 ERROR: Exception on /api/users/2/chats/4 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -43,16 +60,65 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 22, in get_chat
-    data = Conversation.query.filter_by(user_id=id,conversation_no=chat_id).first_or_404().to_dict()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
-    'message':json.loads(self.message[2:]),
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 186, in from_dict
+    search_keywords = json.loads(response)['FirstAid_searchwords']
+                      ^^^^^^^^^^^^^^^^^^^^
   File "/home/py_sama/anaconda3/lib/python3.11/json/__init__.py", line 346, in loads
     return _default_decoder.decode(s)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 340, in decode
-    raise JSONDecodeError("Extra data", s, end)
-json.decoder.JSONDecodeError: Extra data: line 4 column 4 (char 2553)
-2024-01-03 10:22:06,572 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-01-05 08:38:59,177 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:41:11,364 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:41:35,508 ERROR: Exception on /api/users/2/chats/4 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 192, in from_dict
+    returned_link = {return_url(keyword) for keyword in search_keywords}
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 192, in <setcomp>
+    returned_link = {return_url(keyword) for keyword in search_keywords}
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2024-01-05 08:44:18,918 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 08:46:09,943 ERROR: Exception on /api/users/2/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 199, in from_dict
+    self.search_keywords = repr(list(set(returned_link)))
+                                     ^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2024-01-05 08:48:05,495 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 09:02:43,892 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]

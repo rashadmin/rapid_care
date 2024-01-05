@@ -3,11 +3,13 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash 
 from flask_login import UserMixin
 import enum
+from json.decoder import JSONDecodeError
 from app.search import add_to_index,remove_index,query_index
 from flask import url_for
 from app.videos.videos_functions import generate_other_names
 import json
 from app.chat.chat import chat
+from app.videos.videos_functions import return_url
 class BloodGroup(enum.Enum):
     a_positive = 'A+'
     b_positive = 'B+'
@@ -182,11 +184,22 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             message.get_response()
             response = message.get_dict_response(is_dict_done=self.is_dict_done,text = data['user_message'])
             if response:
-                search_keywords = json.loads(response)['FirstAid_searchwords']
+                try:
+                    search_keywords = json.loads(response)['FirstAid_searchwords']
+                except JSONDecodeError:
+                    search_keywords = json.loads(response)['FirstAid_searchwords']
                 if search_keywords:
-                    search = [Videos.search(keyword,1,10) for keyword in search_keywords]
-                    return_link = {search[i][0].all()[0].name:search[i][0].all()[0].url for i in range(len(search)) if search[i][1]['value']!=0}
-                    self.search_keywords = repr(return_link)
+                    returned_link = [return_url(keyword) for keyword in search_keywords]
+                    if all(returned_link) is False:
+                        self.search_keywords = None
+                    elif any(returned_link) is False:
+                        returned_link_temp = {repr(i) for i in returned_link if i is not False}
+                        returned_link = [eval(i) for i in returned_link_temp]
+                        self.search_keywords = repr(returned_link)
+                    else:
+                        returned_link_temp = {repr(i) for i in returned_link}
+                        returned_link = [eval(i) for i in returned_link_temp]
+                        self.search_keywords = repr(returned_link)
                     #self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()

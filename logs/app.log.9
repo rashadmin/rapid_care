@@ -1,4 +1,4 @@
-2023-12-30 08:07:23,587 ERROR: Exception on /chatbot/1 [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-02 07:27:38,075 ERROR: Exception on /api/users/1/chats [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,12 +12,11 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/main/routes.py", line 84, in chatbot
+  File "/home/py_sama/rapid_care/app/api/users.py", line 57, in add_chat
+    conversation.from_dict(id,conversation_no=conversation_no,new_chat=True)
+  File "/home/py_sama/rapid_care/app/models.py", line 167, in from_dict
     message.get_response()
-  File "/home/py_sama/rapid_care/app/main/chat.py", line 37, in get_response
+  File "/home/py_sama/rapid_care/app/chat/chat.py", line 42, in get_response
     full_response = client.chat.completions.create(
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_utils/_utils.py", line 272, in wrapper
@@ -32,6 +31,95 @@ Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 853, in request
     return self._request(
            ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 916, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 958, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 916, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 958, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_base_client.py", line 930, in _request
     raise self._make_status_error_from_response(err.response) from None
-openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-CkuqC***************************************n2mn. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2024-01-02 07:28:01,516 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:28:01,516 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:28:01,516 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:28:01,518 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:35:04,552 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 07:38:22,955 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:48:26,022 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:48:26,022 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:48:26,022 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:48:26,022 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:54:41,410 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:57:36,601 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:58:31,545 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:58:31,583 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:58:31,596 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 12:58:31,641 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:03:04,311 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:03:04,329 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:07:23,030 ERROR: Exception on /api/users/1/chats/2 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    return_link = {search[i][0].all()[0].name:search[i][0].all()[0].url for i in range(len(search)) if search[i][1]['value']!=0}
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <dictcomp>
+    return_link = {search[i][0].all()[0].name:search[i][0].all()[0].url for i in range(len(search)) if search[i][1]['value']!=0}
+                                                                                                       ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'int' object is not subscriptable
+2024-01-02 13:08:21,022 ERROR: Exception on /api/users/1/chats/2 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 185, in from_dict
+    search_keywords = json.loads(response)['FirstAid_searchwords']
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/anaconda3/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-01-02 13:15:20,009 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:15:53,017 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:16:14,305 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:16:14,313 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:16:14,317 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:16:14,323 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:17:28,803 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-02 13:21:42,073 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
