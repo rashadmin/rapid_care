@@ -122,3 +122,4 @@ Traceback (most recent call last):
 TypeError: unhashable type: 'dict'
 2024-01-05 08:48:05,495 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
 2024-01-05 09:02:43,892 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-05 09:17:42,754 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
