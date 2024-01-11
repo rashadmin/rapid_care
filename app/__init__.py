@@ -14,7 +14,7 @@ from app.extensions import db
 from flask_cors import CORS
 migrate = Migrate()
 login = LoginManager()
-cors = CORS
+cors =CORS()
 login.login_view = 'auth.login'
 
 def create_app(config_class=Config):
