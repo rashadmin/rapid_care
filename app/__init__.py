@@ -11,10 +11,10 @@ import os
 from elasticsearch import Elasticsearch
 from logging.handlers import SMTPHandler,RotatingFileHandler
 from app.extensions import db
-
+from flask_cors import CORS
 migrate = Migrate()
 login = LoginManager()
-
+cors = CORS
 login.login_view = 'auth.login'
 
 def create_app(config_class=Config):
@@ -23,6 +23,7 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app,db)
     login.init_app(app)
+    cors.init_app(app)
     with app.app_context():
         from app.errors import bp as errors_bp
         app.register_blueprint(errors_bp)
