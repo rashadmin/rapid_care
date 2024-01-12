@@ -210,7 +210,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             self.is_dict_done = False
             if anony:
                 self.anony_user_id = user_id
-                self.title = f'{user_id}_chat'
+                self.title = f'mychat'
             else:
                 self.user_id = user_id
                 self.conversation_no = conversation_no
