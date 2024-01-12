@@ -224,6 +224,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             message = chat(self.message)
             message.get_response()
             response = message.get_dict_response(is_dict_done=self.is_dict_done,text = data['user_message'])
+            print(response)
             if response:
                 try:
                     search_keywords = json.loads(response)['FirstAid_searchwords']
