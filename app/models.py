@@ -138,7 +138,7 @@ class User(UserMixin,db.Model):
             self.set_password(data['password'])
 
 class Anonyuser(UserMixin,db.Model):
-    username = db.Column(db.String(25),primary_key=True)
+    username = db.Column(db.String(36),primary_key=True)
     date_created = db.Column(db.Date,default=datetime.utcnow)
     bloodgroup = db.Column(db.Enum(BloodGroup))
     genotype = db.Column(db.Enum(Genotype))
