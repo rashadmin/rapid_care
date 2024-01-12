@@ -40,7 +40,7 @@ def return_url(query):
         data =  response.json()['items']
         url_links = {data[i]['snippet']['title']:f"https://youtu.be/{data[i]['id']['videoId']}" for i in range(len(data))}
         return url_links
-    return False
+    return response.status_code
 
 
 
