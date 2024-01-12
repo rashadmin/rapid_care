@@ -121,3 +121,5 @@ Traceback (most recent call last):
 openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
 2024-01-12 17:17:51,173 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
 2024-01-12 17:18:04,277 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
+2024-01-12 18:20:44,979 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
+2024-01-12 18:20:53,241 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]

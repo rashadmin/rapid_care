@@ -178,7 +178,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     is_dict_done = db.Column(db.Boolean,nullable=True)
     search_keywords = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
-    anony_user_id = db.Column(db.String(32),db.ForeignKey('anonyuser.username'))
+    anony_user_id = db.Column(db.String(50),db.ForeignKey('anonyuser.username'))
     hospitals = None
     def __repr__(self):
         return f'<User : {self.user_id} Conversation_Number : {self.conversation_no}, Title : {self.title}, Created : {self.created_at}>'
