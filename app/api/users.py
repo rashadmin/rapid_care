@@ -141,7 +141,7 @@ def create_anony_user():
     while True:
         user_id = str(uuid.uuid4())
         if  not Anonyuser.query.filter_by(username=user_id).first():
-            print(len(user_id))
+            print(user_id)
             user = Anonyuser()
             data = request.get_json() or {}
             user.from_dict(user_id,data) 
