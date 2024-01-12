@@ -12,6 +12,7 @@ from elasticsearch import Elasticsearch
 from logging.handlers import SMTPHandler,RotatingFileHandler
 from app.extensions import db
 from flask_cors import CORS
+from app.maps.hospital_filter import get_top
 migrate = Migrate()
 login = LoginManager()
 cors =CORS()
@@ -39,6 +40,9 @@ def create_app(config_class=Config):
         app.register_blueprint(chat_bp)
         from app.videos import bp as videos_bp
         app.register_blueprint(videos_bp)
+        from app.maps import bp as maps_bp
+        app.register_blueprint(maps_bp)
+        
     app.elasticsearch = Elasticsearch(app.config['ELASTICSEARCH_URL']) if app.config['ELASTICSEARCH_URL'] else None
     engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
     inspector = sa.inspect(engine)

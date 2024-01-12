@@ -1,0 +1,997 @@
+{
+  "places": [
+    {
+      "types": [
+        "hospital",
+        "doctor",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "9 Groby Rd, Leicester LE3 9ED, UK",
+      "location": {
+        "latitude": 52.644248399999995,
+        "longitude": -1.1499404000000002
+      },
+      "rating": 2.7,
+      "websiteUri": "http://www.grobyroadmedicalcentre.com/",
+      "displayName": {
+        "text": "Groby Road Medical Centre",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 7,
+              "minute": 45,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 7,
+              "minute": 45,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 7,
+              "minute": 45,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 7,
+              "minute": 45,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 7,
+              "minute": 45,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 7:45\u202fAM – 6:30\u202fPM",
+          "Tuesday: 7:45\u202fAM – 6:30\u202fPM",
+          "Wednesday: 7:45\u202fAM – 6:30\u202fPM",
+          "Thursday: 7:45\u202fAM – 6:30\u202fPM",
+          "Friday: 7:45\u202fAM – 6:30\u202fPM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "31 Blackbird Rd, Leicester LE4 0AJ, UK",
+      "location": {
+        "latitude": 52.645431099999996,
+        "longitude": -1.1476353
+      },
+      "displayName": {
+        "text": "NHS",
+        "languageCode": "en"
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "Rutland House, 19-25 Friar Ln, Leicester LE1 5QQ, UK",
+      "location": {
+        "latitude": 52.6334864,
+        "longitude": -1.1359289
+      },
+      "websiteUri": "http://gretagroveltd.com/",
+      "displayName": {
+        "text": "Gretagrove Healthcare",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 9:00\u202fAM – 6:00\u202fPM",
+          "Tuesday: 9:00\u202fAM – 6:00\u202fPM",
+          "Wednesday: 9:00\u202fAM – 6:00\u202fPM",
+          "Thursday: 9:00\u202fAM – 6:00\u202fPM",
+          "Friday: 9:00\u202fAM – 6:00\u202fPM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "38 Westcotes Dr, Leicester LE3 0QR, UK",
+      "location": {
+        "latitude": 52.628803999999995,
+        "longitude": -1.1523208999999999
+      },
+      "rating": 5,
+      "websiteUri": "http://www.diwalinivas.co.uk/",
+      "displayName": {
+        "text": "Diwali Nivas Residential Home",
+        "languageCode": "en"
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "doctor",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "5 Briton St, Leicester LE3 0AA, UK",
+      "location": {
+        "latitude": 52.6282754,
+        "longitude": -1.1489129999999999
+      },
+      "rating": 2.1,
+      "websiteUri": "http://www.leicestergp.com/",
+      "displayName": {
+        "text": "The Surgery - Dr Shafi - General Practitioner",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 8:00\u202fAM – 6:30\u202fPM",
+          "Tuesday: 8:00\u202fAM – 6:30\u202fPM",
+          "Wednesday: 8:00\u202fAM – 6:30\u202fPM",
+          "Thursday: 8:00\u202fAM – 6:30\u202fPM",
+          "Friday: 8:00\u202fAM – 6:30\u202fPM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "doctor",
+        "hospital",
+        "local_government_office",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "Ann St, Leicester LE1 1SR, UK",
+      "location": {
+        "latitude": 52.636826299999996,
+        "longitude": -1.1250874
+      },
+      "rating": 5,
+      "websiteUri": "http://www.privatemedical.clinic/",
+      "displayName": {
+        "text": "PrivateMedical.Clinic",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 18,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 13
+              }
+            },
+            "close": {
+              "day": 6,
+              "hour": 12,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 13
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 9:00\u202fAM – 6:00\u202fPM",
+          "Tuesday: 9:00\u202fAM – 6:00\u202fPM",
+          "Wednesday: 9:00\u202fAM – 6:00\u202fPM",
+          "Thursday: 9:00\u202fAM – 6:00\u202fPM",
+          "Friday: 9:00\u202fAM – 6:00\u202fPM",
+          "Saturday: 9:00\u202fAM – 12:00\u202fPM",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "consultant",
+        "doctor",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "Ann St, Leicester LE1 1SR, UK",
+      "location": {
+        "latitude": 52.637473299999996,
+        "longitude": -1.1243838
+      },
+      "rating": 4.8,
+      "websiteUri": "http://www.flyingmedicine.uk/",
+      "displayName": {
+        "text": "FlyingMedicine™ (Medicals and Vaccination Clinic)",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": false,
+        "periods": [
+          {
+            "open": {
+              "day": 3,
+              "hour": 9,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 17,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: Closed",
+          "Tuesday: Closed",
+          "Wednesday: 9:00\u202fAM – 5:00\u202fPM",
+          "Thursday: Closed",
+          "Friday: Closed",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "doctor",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "Belgrave Health Centre, 52 Brandon St, Leicester LE4 6AW, UK",
+      "location": {
+        "latitude": 52.6483011,
+        "longitude": -1.1212872
+      },
+      "rating": 2.4,
+      "websiteUri": "http://www.brandonsurgeryatbelgravehc.co.uk/",
+      "displayName": {
+        "text": "Dr D Gandecha Surgery",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 19,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 19,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 19,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 19,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 8:00\u202fAM – 7:00\u202fPM",
+          "Tuesday: 8:00\u202fAM – 7:00\u202fPM",
+          "Wednesday: 8:00\u202fAM – 7:00\u202fPM",
+          "Thursday: 8:00\u202fAM – 6:30\u202fPM",
+          "Friday: 8:00\u202fAM – 7:00\u202fPM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "Belgrave Health Centre, 52 Brandon St, Leicester LE4 6AW, UK",
+      "location": {
+        "latitude": 52.647734299999996,
+        "longitude": -1.1208523000000001
+      },
+      "rating": 1.5,
+      "displayName": {
+        "text": "Brandon Street Surgery",
+        "languageCode": "en"
+      },
+      "currentOpeningHours": {
+        "openNow": true,
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            },
+            "close": {
+              "day": 1,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 15
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            },
+            "close": {
+              "day": 2,
+              "hour": 20,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 9
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            },
+            "close": {
+              "day": 3,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 10
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            },
+            "close": {
+              "day": 4,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 11
+              }
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "hour": 8,
+              "minute": 0,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            },
+            "close": {
+              "day": 5,
+              "hour": 18,
+              "minute": 30,
+              "date": {
+                "year": 2024,
+                "month": 1,
+                "day": 12
+              }
+            }
+          }
+        ],
+        "weekdayDescriptions": [
+          "Monday: 8:00\u202fAM – 6:30\u202fPM",
+          "Tuesday: 8:00\u202fAM – 8:00\u202fPM",
+          "Wednesday: 8:00\u202fAM – 6:30\u202fPM",
+          "Thursday: 8:00\u202fAM – 6:30\u202fPM",
+          "Friday: 8:00\u202fAM – 6:30\u202fPM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      }
+    },
+    {
+      "types": [
+        "hospital",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "44 Havelock St, Leicester LE2 7HL, UK",
+      "location": {
+        "latitude": 52.6267789,
+        "longitude": -1.1378636
+      },
+      "displayName": {
+        "text": "Poppies Nursery, Leicester Royal Infirmary",
+        "languageCode": "en"
+      }
+    }
+  ]
+}

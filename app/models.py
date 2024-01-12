@@ -10,6 +10,8 @@ from app.videos.videos_functions import generate_other_names
 import json
 from app.chat.chat import chat
 from app.videos.videos_functions import return_url
+from app.maps.hospital_filter import get_top
+
 class BloodGroup(enum.Enum):
     a_positive = 'A+'
     b_positive = 'B+'
@@ -135,12 +137,40 @@ class User(UserMixin,db.Model):
         if new_user and 'password' in data:
             self.set_password(data['password'])
 
+class Anonyuser(UserMixin,db.Model):
+    username = db.Column(db.String(25),primary_key=True)
+    date_created = db.Column(db.Date,default=datetime.utcnow)
+    bloodgroup = db.Column(db.Enum(BloodGroup))
+    genotype = db.Column(db.Enum(Genotype))
+    medical_history = db.Column(db.Text)
+    conversations = db.Relationship('Conversation',backref = 'anonyuser',uselist=False)
+    
+    
+    def __repr__(self):
+        return f'<User : {self.username}'
 
+    def to_dict(self):
+        data = {
+            'username':self.username,
+            'bloodgroup':self.bloodgroup.value if self.bloodgroup else None,
+            'genotype':self.genotype.value if self.genotype else None,
+            'medical_history':self.medical_history,
+            '_links':{
+                #'self': url_for('api.get_user',id=self.id),
+                'conversations':url_for('api.get_anony_chat',user_id=self.username)}
+        }
+        return data
+    def from_dict(self,user_id,data=None):
+        self.username = user_id
+        for field in ['bloodgroup','genotype','medical_history']:
+            if field in data:
+                setattr(self,field,data[field])
+            
 
 class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     __searchable__ = ['title','message']
     id = db.Column(db.Integer,primary_key=True)
-    conversation_no =  db.Column(db.Integer,nullable = False)
+    conversation_no =  db.Column(db.Integer,nullable = True)
     created_at = db.Column(db.Date,default=datetime.utcnow)
     modified_at = db.Column(db.Date,default=datetime.utcnow)
     title = db.Column(db.String(120),nullable = False)
@@ -148,9 +178,14 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     is_dict_done = db.Column(db.Boolean,nullable=True)
     search_keywords = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
-
+    anony_user_id = db.Column(db.String(32),db.ForeignKey('anonyuser.username'))
+    hospitals = None
     def __repr__(self):
         return f'<User : {self.user_id} Conversation_Number : {self.conversation_no}, Title : {self.title}, Created : {self.created_at}>'
+    def to_map(self):
+        data = {
+            'hospital':self.hospitals.get_top_5()}
+        return data
     def to_dict(self):
         data = {
             'id' : self.id,
@@ -159,21 +194,27 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             'modified_at':self.modified_at.isoformat() + 'Z',
             'title':self.title,
             'message':json.loads(self.message)[2:],
-            '_links':self.search_keywords
+            'length': self.check_length(),
+            '_links':self.search_keywords,
         }
         return data
-    def from_dict(self,user_id,conversation_no=None,new_chat=False,data=None):
+    def from_dict(self,user_id,conversation_no=None,new_chat=False,data=None,anony=False):
         if new_chat:
             message = chat('[]')
+            self.hospitals = get_top()
             message.add_system_message()
             message.get_response()
             self.created_at = datetime.utcnow()
-            self.conversation_no = conversation_no
-            self.title = f'Untitled_{conversation_no}'
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
-            self.user_id = user_id
             self.is_dict_done = False
+            if anony:
+                self.anony_user_id = user_id
+                self.title = f'{user_id}_chat'
+            else:
+                self.user_id = user_id
+                self.conversation_no = conversation_no
+                self.title = f'Untitled_{conversation_no}'
         if not new_chat:
             message = chat(self.message)
             message.add_user_message(data['user_message'])
@@ -203,7 +244,8 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
                     #self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
-
+    def check_length(self):
+        return int(4096-len(self.message))
 class Videos(SeachableMixin,db.Model):
     __searchable__ = ['name','other_names']
     id = db.Column(db.Integer,primary_key=True)
