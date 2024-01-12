@@ -98,7 +98,7 @@ def add_chat(id):
 @bp.route('/anony_users/<string:user_id>/chat',methods=['POST'])
 def add_anony_chat(user_id):
     conversation = Conversation()
-    conversation.from_dict(id,new_chat=True,anony=True)
+    conversation.from_dict(user_id,new_chat=True,anony=True)
     db.session.add(conversation)
     db.session.commit()
     response = jsonify(conversation.to_dict())
@@ -141,7 +141,6 @@ def create_anony_user():
     while True:
         user_id = str(uuid.uuid4())
         if  not Anonyuser.query.filter_by(username=user_id).first():
-            print(user_id)
             user = Anonyuser()
             data = request.get_json() or {}
             user.from_dict(user_id,data) 
