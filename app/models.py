@@ -253,6 +253,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     def check_length(self):
         return int(4096-len(self.message))
     def to_hospital_dict(self):
+        print(type(self.info_hospital))
         info = json.loads(self.info_hospital)
         user_info = Anonyuser.query.filter_by(anony_user_id=self.anony_user_id)
         if 'FirstAid_searchwords' in info:
