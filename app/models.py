@@ -228,7 +228,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             message.get_response()
             response = message.get_dict_response(is_dict_done=self.is_dict_done,text = data['user_message'])
             if response:
-                self.info_hospital = repr(response)
+                self.info_hospital = response
                 try:
                     search_keywords = json.loads(response)['FirstAid_searchwords']
                 except JSONDecodeError:
