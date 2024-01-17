@@ -175,9 +175,9 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     modified_at = db.Column(db.Date,default=datetime.utcnow)
     title = db.Column(db.String(120),nullable = False)
     message = db.Column(db.Text,nullable = False)
-    is_dict_done = db.Column(db.Boolean,nullable=True)
-    youtube_link = db.Column(db.Text)
-    info_hospital = db.Column(db.Text) 
+    is_dict_done = db.Column(db.Boolean)
+    youtube_link = db.Column(db.Text,nullable=True)
+    info_hospital = db.Column(db.Text,nullable=True) 
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
     anony_user_id = db.Column(db.String(50),db.ForeignKey('anonyuser.username'))
     hospitals = None
