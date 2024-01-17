@@ -56,9 +56,9 @@ class chat():
             model=self.openai_model,
             messages=[
                 {
-                "role": "user",
-                "content": f"""
-                            You will be given a medical situation message : {text}. 
+                "role": "system",
+                "content": """
+                            You will be given a medical situation message. 
                             return JSON format with the following key value pairs in back ticks
                             
                             
@@ -80,6 +80,10 @@ class chat():
                             
                                 
                                 """
+                },
+                {
+                    "role":"user",
+                    "content":f"{text}"
                 }
             ],
             temperature=0
