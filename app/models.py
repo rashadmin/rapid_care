@@ -176,7 +176,8 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     title = db.Column(db.String(120),nullable = False)
     message = db.Column(db.Text,nullable = False)
     is_dict_done = db.Column(db.Boolean,nullable=True)
-    search_keywords = db.Column(db.Text)
+    youtube_link = db.Column(db.Text)
+    info_hospital = db.Column(db.Text) 
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
     anony_user_id = db.Column(db.String(50),db.ForeignKey('anonyuser.username'))
     hospitals = None
@@ -195,7 +196,9 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             'title':self.title,
             'message':json.loads(self.message)[2:],
             'length': self.check_length(),
-            '_links':self.search_keywords,
+            '_links':{'youtube_link':self.youtube_link,
+                      'hospital_link':url_for('api.hospital_info_for_anony',user_id=self.anony_user_id)}
+
         }
         return data
     def from_dict(self,user_id,conversation_no=None,new_chat=False,data=None,anony=False):
@@ -225,6 +228,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
             message.get_response()
             response = message.get_dict_response(is_dict_done=self.is_dict_done,text = data['user_message'])
             if response:
+                self.info_hospital = repr(response)
                 try:
                     search_keywords = json.loads(response)['FirstAid_searchwords']
                 except JSONDecodeError:
@@ -234,20 +238,30 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
                     returned_link = [return_url(keyword) for keyword in search_keywords]
                     print('info2',returned_link)
                     if all(returned_link) is False:
-                        self.search_keywords = None
+                        self.youtube_link = None
                     elif any(returned_link) is False:
                         returned_link_temp = {repr(i) for i in returned_link if i is not False}
                         returned_link = [eval(i) for i in returned_link_temp]
-                        self.search_keywords = repr(returned_link)
+                        self.youtube_link = repr(returned_link)
                     else:
                         returned_link_temp = {repr(i) for i in returned_link}
                         returned_link = [eval(i) for i in returned_link_temp]
-                        self.search_keywords = repr(returned_link)
+                        self.youtube_link = repr(returned_link)
                     #self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
     def check_length(self):
         return int(4096-len(self.message))
+    def to_hospital_dict(self):
+        info = json.loads(self.info_hospital)
+        user_info = Anonyuser.query.filter_by(anony_user_id=self.anony_user_id)
+        if 'FirstAid_searchwords' in info:
+            info.pop('FirstAid_searchwords')
+        if '_links' in user_info:
+            user_info.pop('_links')
+        info.update(user_info)
+        return info
+
 class Videos(SeachableMixin,db.Model):
     __searchable__ = ['name','other_names']
     id = db.Column(db.Integer,primary_key=True)

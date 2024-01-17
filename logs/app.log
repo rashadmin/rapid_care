@@ -123,3 +123,4 @@ openai.OpenAIError: The api_key client option must be set either by passing api_
 2024-01-12 17:18:04,277 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
 2024-01-12 18:20:44,979 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
 2024-01-12 18:20:53,241 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
+2024-01-17 10:51:03,118 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]

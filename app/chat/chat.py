@@ -43,7 +43,7 @@ class chat():
         full_response = client.chat.completions.create(
         model=self.openai_model,
         messages=self.message,
-        temperature=0.4, # this is the degree of randomness of the model's output
+        temperature=0, # this is the degree of randomness of the model's output
     )
         full_response = full_response.choices[0].message.content
         self.message.append({"role": "assistant", "content": full_response})
@@ -82,7 +82,7 @@ class chat():
                                 """
                 }
             ],
-            temperature=1
+            temperature=0
             )
             responses = response.choices[0].message.content
             return responses
