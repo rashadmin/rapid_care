@@ -255,12 +255,8 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     def to_hospital_dict(self):
         print(self.info_hospital)
         info = json.loads(self.info_hospital)
-        user_info = Anonyuser.query.filter_by(anony_user_id=self.anony_user_id)
         if 'FirstAid_searchwords' in info:
             info.pop('FirstAid_searchwords')
-        if '_links' in user_info:
-            user_info.pop('_links')
-        info.update(user_info)
         return info
 
 class Videos(SeachableMixin,db.Model):
