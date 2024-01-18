@@ -10,7 +10,6 @@ from app.videos.videos_functions import generate_other_names
 import json
 from app.chat.chat import chat
 from app.videos.videos_functions import return_url
-from app.maps.hospital_filter import get_top
 
 class BloodGroup(enum.Enum):
     a_positive = 'A+'
@@ -183,10 +182,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     hospitals = None
     def __repr__(self):
         return f'<User : {self.user_id} Conversation_Number : {self.conversation_no}, Title : {self.title}, Created : {self.created_at}>'
-    def to_map(self):
-        data = {
-            'hospital':self.hospitals.get_top_5()}
-        return data
+
     def to_dict(self):
         data = {
             'id' : self.id,
@@ -204,7 +200,6 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     def from_dict(self,user_id,conversation_no=None,new_chat=False,data=None,anony=False):
         if new_chat:
             message = chat('[]')
-            self.hospitals = get_top()
             message.add_system_message()
             message.get_response()
             self.created_at = datetime.utcnow()

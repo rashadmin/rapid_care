@@ -1,128 +1,110 @@
-2024-01-12 15:57:30,511 ERROR: Exception on /api/anony_users [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 149, in create_anony_user
-    response = jsonify(user.to_dict())
-                       ^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
-    'self': url_for('api.get_user',id=self.id),
-                                      ^^^^^^^
-AttributeError: 'Anonyuser' object has no attribute 'id'
-2024-01-12 15:58:44,361 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 15:59:01,715 ERROR: Exception on /api/anony_users [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 149, in create_anony_user
-    response = jsonify(user.to_dict())
-                       ^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 159, in to_dict
-    'self': url_for('api.get_user',id=self.id),
-                                      ^^^^^^^
-AttributeError: 'Anonyuser' object has no attribute 'id'
-2024-01-12 16:02:24,818 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:02:36,642 ERROR: Exception on /api/anony_users [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 151, in create_anony_user
-    response.headers['location'] = url_for('api.add_anony_chat',user_id=user.id)
-                                                                        ^^^^^^^
-AttributeError: 'Anonyuser' object has no attribute 'id'
-2024-01-12 16:04:43,004 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:18:15,969 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:27:53,673 ERROR: Exception on /api/anony_users/user_id/chat [GET] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: get_anony_chat() missing 1 required positional argument: 'user_id'
-2024-01-12 16:29:04,732 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:34:41,828 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:37:54,186 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 16:38:40,742 ERROR: Exception on /api/anony_users/350bd3e3-6c90-4d21-a1bf-b0d20430fdb3/chat [POST] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 101, in add_anony_chat
-    conversation.from_dict(id,new_chat=True,anony=True)
-  File "/home/py_sama/rapid_care/app/models.py", line 206, in from_dict
-    message.get_response()
-  File "/home/py_sama/rapid_care/app/chat/chat.py", line 42, in get_response
-    client = OpenAI(api_key = current_app.config['OPEN_AI_API_KEY'])
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/openai/_client.py", line 92, in __init__
-    raise OpenAIError(
-openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
-2024-01-12 17:17:51,173 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 17:18:04,277 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 18:20:44,979 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-12 18:20:53,241 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-17 10:51:03,118 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-17 11:20:00,537 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
-2024-01-17 11:20:10,340 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 85]
+2024-01-18 15:37:32,370 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:38:02,829 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:38:33,340 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:39:03,873 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:39:35,624 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:40:05,217 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:40:35,532 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:41:06,166 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:41:36,598 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:42:07,161 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:42:37,344 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:43:07,986 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:43:38,368 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:44:08,827 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:44:39,127 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:45:09,366 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:45:39,938 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:46:10,386 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:46:40,824 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:47:11,286 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:47:42,194 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:48:12,587 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:48:42,843 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:49:13,192 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:49:44,166 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:50:14,371 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:50:44,721 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:51:15,021 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:51:45,868 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:52:16,256 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:52:46,475 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:53:16,887 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:53:47,361 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:54:17,887 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:54:49,028 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:55:18,809 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:55:49,202 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:56:20,070 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:56:50,246 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:57:21,135 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:57:51,412 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:58:21,865 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:58:52,307 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:59:22,552 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 15:59:53,197 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:00:23,561 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:00:54,009 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:01:24,337 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:01:55,275 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:02:25,428 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:02:55,880 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:03:26,529 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:03:56,868 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:04:28,162 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:04:57,763 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:05:28,184 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:05:58,817 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:06:29,280 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:06:59,718 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:07:30,081 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:08:00,785 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:08:31,186 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:09:01,527 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:09:32,186 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:10:02,668 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:10:33,123 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:11:03,546 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:11:34,031 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:12:04,583 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:12:35,076 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:13:05,442 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:13:35,961 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:14:06,656 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:14:37,163 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:15:07,773 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:15:37,693 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:16:08,094 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:16:38,815 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:17:09,357 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:17:40,916 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:18:10,240 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:18:40,500 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:19:10,951 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:19:41,464 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:20:11,945 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:20:42,394 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:21:01,531 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:21:32,362 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:22:02,733 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:22:32,550 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:23:02,841 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:28:16,326 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:28:42,853 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:29:14,790 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:29:41,285 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:30:02,572 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:30:41,174 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:31:04,469 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:31:34,618 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:32:05,473 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:32:35,833 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:33:06,095 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:33:36,713 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:34:07,192 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:34:37,820 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:35:08,094 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:35:38,504 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:36:09,372 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:36:39,901 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]
+2024-01-18 16:37:09,987 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 88]

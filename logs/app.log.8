@@ -1,105 +1,4 @@
-2024-01-04 11:07:48,264 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
-    conversation.from_dict(id,data=data)
-  File "/home/py_sama/rapid_care/app/models.py", line 189, in from_dict
-    return_link = {search.keys()[0]:search.values()[0]for search in searches}
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 189, in <dictcomp>
-    return_link = {search.keys()[0]:search.values()[0]for search in searches}
-                   ~~~~~~~~~~~~~^^^
-TypeError: 'dict_keys' object is not subscriptable
-2024-01-04 13:47:07,302 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 15:02:54,260 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 15:59:46,011 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 16:01:20,687 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
-    conversation.from_dict(id,data=data)
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
-    return_link = [return_link(keyword) for keyword in search_keywords]
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
-    return_link = [return_link(keyword) for keyword in search_keywords]
-                   ^^^^^^^^^^^
-NameError: cannot access free variable 'return_link' where it is not associated with a value in enclosing scope
-2024-01-04 16:02:21,864 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 16:02:41,797 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
-    conversation.from_dict(id,data=data)
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
-    return_link = [return_link(keyword) for keyword in search_keywords]
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
-    return_link = [return_link(keyword) for keyword in search_keywords]
-                   ^^^^^^^^^^^
-NameError: cannot access free variable 'return_link' where it is not associated with a value in enclosing scope
-2024-01-04 16:03:21,458 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 16:03:37,545 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
-Traceback (most recent call last):
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
-    conversation.from_dict(id,data=data)
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
-    returned_link = [return_link(keyword) for keyword in search_keywords]
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
-    returned_link = [return_link(keyword) for keyword in search_keywords]
-                     ^^^^^^^^^^^^^^^^^^^^
-  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 49, in return_link
-    if search_result['value'] != 0:
-       ~~~~~~~~~~~~~^^^^^^^^^
-TypeError: tuple indices must be integers or slices, not str
-2024-01-04 16:04:33,604 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
-2024-01-04 16:04:52,702 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+2024-01-04 16:20:50,459 ERROR: Exception on /api/users/3/chats/6 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
 Traceback (most recent call last):
   File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -122,7 +21,116 @@ Traceback (most recent call last):
     returned_link = [return_link(keyword) for keyword in search_keywords]
                      ^^^^^^^^^^^^^^^^^^^^
   File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 51, in return_link
-    elif search_result['value'] == 0:
-         ~~~~~~~~~~~~~^^^^^^^^^
-TypeError: tuple indices must be integers or slices, not str
-2024-01-04 16:05:29,757 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+    return {search_result[0].all()[0].name : search_result[0].all()[0].url}
+            ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-01-04 16:21:52,810 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:24:07,264 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:25:20,173 ERROR: Exception on /api/users/3/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 50, in return_link
+    return {search_result[0].all()[0].name : search_result[0].all()[0].url}
+            ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-01-04 16:26:53,287 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:27:22,695 ERROR: Exception on /api/users/3/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 50, in return_link
+    return {search_result[0].all()[0].name : search_result[0].all()[0].url}
+            ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-01-04 16:28:47,304 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:29:07,935 ERROR: Exception on /api/users/3/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 51, in return_link
+    return {search_result[0].all()[0].name : search_result[0].all()[0].url}
+            ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-01-04 16:31:51,827 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
+2024-01-04 16:39:37,839 ERROR: Exception on /api/users/3/chats/5 [PUT] [in /home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py : 825]
+Traceback (most recent call last):
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/rapid_care_environment/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/api/users.py", line 32, in update_chat
+    conversation.from_dict(id,data=data)
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in from_dict
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/models.py", line 188, in <listcomp>
+    returned_link = [return_link(keyword) for keyword in search_keywords]
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/py_sama/rapid_care/app/videos/videos_functions.py", line 51, in return_link
+    return {search_result[0].all()[0].name : search_result[0].all()[0].url}
+            ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-01-04 16:49:57,078 INFO: hub_startup [in /home/py_sama/rapid_care/app/__init__.py : 80]
