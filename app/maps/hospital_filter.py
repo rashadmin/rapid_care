@@ -6,16 +6,9 @@ import pandas as pd
 import random
 import json
 import numpy as np
-from app import socketio
 
 
-@socketio.on("connect")
-def handle_connect():
-    print("Client connected")
 
-@socketio.on("disconnect")
-def handle_disconnect():
-    print("Client disconnected")
 
 def get_distance_and_duration(origin, destination):
     # Simulate distance and duration
@@ -55,7 +48,7 @@ def get_places_info():
     data = data.sort_values(['duration','dist_km'])[['displayName','dist_km','duration']].reset_index(drop=True)
     return jsonify(data.to_dict(orient='index'))#.apply(lambda x: x['dist_km']).to_dict()
 
-@socketio.on("get_places_data")
+
 def handle_get_places_data():
     while True:
         places_data = get_places_info()

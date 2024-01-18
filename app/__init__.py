@@ -5,7 +5,6 @@ from config import Config
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_socketio import SocketIO, emit
 import logging
 import sqlalchemy as sa
 import os
@@ -17,7 +16,6 @@ from flask_cors import CORS
 migrate = Migrate()
 login = LoginManager()
 cors =CORS()
-socketio = SocketIO()
 login.login_view = 'auth.login'
 
 def create_app(config_class=Config):
@@ -27,7 +25,6 @@ def create_app(config_class=Config):
     migrate.init_app(app,db)
     login.init_app(app)
     cors.init_app(app)
-    socketio.init_app(app)
     with app.app_context():
         from app.errors import bp as errors_bp
         app.register_blueprint(errors_bp)
