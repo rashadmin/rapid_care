@@ -42,6 +42,7 @@ def get_places_info():
     data.drop('currentOpeningHours',axis=1,inplace=True)
     data['acceptance_probability'] = np.random.uniform(0,1,size=data.shape[0])
     data['duration'] = np.random.uniform(1,5,size=data.shape[0])
+    data['ambulance'] = np.random.choice(np.array(['yes','no']),size=data.shape[0])
     data['displayName'] = data['displayName'].apply(lambda x: x['text'])
     data =data[data['acceptance_probability']<0.5]
     print(data)

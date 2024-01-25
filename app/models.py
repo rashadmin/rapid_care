@@ -242,7 +242,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
                         returned_link_temp = {repr(i) for i in returned_link}
                         returned_link = [eval(i) for i in returned_link_temp]
                         self.youtube_link = repr(returned_link)
-                    #self.is_dict_done = True
+                    self.is_dict_done = True
             self.message = message.return_all_message()
             self.modified_at = datetime.utcnow()
     def check_length(self):
