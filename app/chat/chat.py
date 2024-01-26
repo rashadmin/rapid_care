@@ -62,7 +62,7 @@ class chat():
                             return JSON format with the following key value pairs in back ticks
                             
                             
-                            `Situation`- `Emergency or Non-Emergency`
+                            `Situation`- `Emergency or Non-Emergency or non-medical if it is non related to medical situation`
                             `Age`-`Based on the age in the given information classify them as pediatric,adult,geriatric, if no age can be infered \
                                     return Not Stated`
                             `Gender` -  `From the medical situation message, kindly infer the gender if no gender can be infered \
@@ -89,6 +89,7 @@ class chat():
             temperature=0
             )
             responses = response.choices[0].message.content
+
             return responses
         return None
 
