@@ -226,7 +226,13 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
                 print(response)
                 self.info_hospital = response
                 try:
-                    search_keywords = json.loads(response)['FirstAid_searchwords']
+                    search_keywords = json.loads(response)
+                    if 'FirstAid_searchwords' in search_keywords.keys():
+                        search_keywords = search_keywords['FirstAid_searchwords']
+                    elif search_keywords['Situation'] == 'non medical related condition':
+                        search_keywords=None
+                    elif 'FirstAid_searchwords' not in search_keywords.keys():
+                        search_keywords=None
                 except JSONDecodeError:
                     search_keywords = None
                 print('info',search_keywords)
