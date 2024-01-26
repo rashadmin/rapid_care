@@ -257,6 +257,8 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
     def to_hospital_dict(self):
         print(self.info_hospital)
         info = json.loads(self.info_hospital)
+        if info['Situation'] == 'non medical related condition':
+            return None
         if 'FirstAid_searchwords' in info:
             info.pop('FirstAid_searchwords')
         return info
