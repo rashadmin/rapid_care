@@ -228,7 +228,7 @@ class Conversation(SeachableMixin,PaginatedAPIMixin,db.Model):
                 try:
                     search_keywords = json.loads(response)['FirstAid_searchwords']
                 except JSONDecodeError:
-                    search_keywords = json.loads(response)['FirstAid_searchwords']
+                    search_keywords = None
                 print('info',search_keywords)
                 if search_keywords:
                     returned_link = [return_url(keyword) for keyword in search_keywords]
