@@ -9,7 +9,7 @@ from app.maps.hospital_filter import get_places_info
 def hospital_info_for_anony(user_id):
     hospital_info = Conversation.query.filter_by(anony_user_id=user_id).first().to_hospital_dict()
     if hospital_info is None:
-        return None
+        return jsonify({'message':None})
     user_info = Anonyuser.query.filter_by(username=user_id).first().to_dict()
     if '_links' in user_info:
         user_info.pop('_links')
